@@ -13,6 +13,11 @@ export default function Books() {
         const res = await fetch(
           "https://json-api.uz/api/project/top-bestseller-books/books"
         );
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+
         const data = await res.json();
         setBooks(data);
       } catch (err) {
@@ -30,13 +35,13 @@ export default function Books() {
       await fetch(url, {
         method: "DELETE",
       });
-      alert("Book deleted successfully!");
       setBooks((prevBooks) => ({
         ...prevBooks,
         data: prevBooks.data.filter((book) => book.id !== id),
       }));
+      alert("Book deleted successfully!");
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error deleting the book:", error);
       alert("Failed to delete the book.");
     }
   };
@@ -56,55 +61,52 @@ export default function Books() {
         },
         body: JSON.stringify(editingBook),
       });
-      alert("Book updated successfully!");
-      setEditingBook(null);
       setBooks((prevBooks) => ({
         ...prevBooks,
         data: prevBooks.data.map((book) =>
           book.id === editingBook.id ? editingBook : book
         ),
       }));
+      setEditingBook(null);
+      alert("Book updated successfully!");
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error updating the book:", error);
       alert("Failed to update the book.");
     }
   };
 
   return (
-    <div className="container">
-      <div className="mt-20 container flex flex-wrap justify-between items-center">
+    <div className="container mx-auto mt-10 px-4">
+      <div className="flex flex-wrap justify-center gap-4">
         {books?.data?.map((book) => (
           <div
             key={book.id}
-            className="h-[300px] mb-5 card card-compact border-2 bg-base-100 w-[22%] shadow-xl"
+            className="card bg-white border rounded-lg shadow-lg overflow-hidden w-full sm:w-80"
           >
-            <figure className="mt-2 h-[150px] overflow-hidden">
+            <figure className="relative">
               <img
-                className="h-full w-full object-cover"
+                className="w-full h-40 object-cover"
                 src={book.image}
                 alt={book.title}
               />
-            </figure>
-            <div className="card-body flex flex-col justify-between h-[180px]">
-              <div className="flex justify-between">
-                <h2 className="card-title truncate">{book.title}</h2>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleEdit(book)}
-                    className="hover:text-green-600 hover:scale-110 hover:-rotate-6"
-                  >
-                    <CiEdit className="w-5 h-5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleDelete(book.id)}
-                    className="hover:text-red-500 hover:scale-110 hover:-rotate-6"
-                  >
-                    <MdDeleteForever className="w-5 h-5" />
-                  </button>
-                </div>
+              <div className="absolute top-2 right-2 flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => handleEdit(book)}
+                  className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-110"
+                >
+                  <CiEdit className="text-blue-600 w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleDelete(book.id)}
+                  className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-110"
+                >
+                  <MdDeleteForever className="text-red-600 w-5 h-5" />
+                </button>
               </div>
+            </figure>
+            <div className="p-4">
               {editingBook && editingBook.id === book.id ? (
                 <div>
                   <input
@@ -114,6 +116,7 @@ export default function Books() {
                       setEditingBook({ ...editingBook, title: e.target.value })
                     }
                     className="input input-bordered mb-2 w-full"
+                    placeholder="Book title"
                   />
                   <input
                     type="text"
@@ -122,6 +125,7 @@ export default function Books() {
                       setEditingBook({ ...editingBook, author: e.target.value })
                     }
                     className="input input-bordered mb-2 w-full"
+                    placeholder="Author"
                   />
                   <button
                     className="btn btn-primary w-full"
@@ -132,12 +136,13 @@ export default function Books() {
                 </div>
               ) : (
                 <>
-                  <span className="text-[18px] font-semibold text-gray-400">
-                    {book.author}
-                  </span>
-                  <p className="text-sm">{book.author}</p>
-                  <div className="w-full card-actions justify-end">
-                    <button className="w-full btn btn-primary">
+                  <h2 className="text-lg font-semibold truncate">
+                    {book.title}
+                  </h2>
+                  <p className="text-gray-600">{book.author}</p>
+                  <p className="text-sm text-gray-500 mt-1">{book.price} sum</p>
+                  <div className="mt-2">
+                    <button className="btn btn-primary w-full">
                       Learn More
                     </button>
                   </div>
