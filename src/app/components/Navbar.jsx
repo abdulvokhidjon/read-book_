@@ -4,8 +4,8 @@ import React from "react";
 function Navbar() {
   return (
     <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto">
-        <div className="navbar text-white">
+      <div className="container  mx-auto">
+        <div className="navbar  text-black ">
           <div className="navbar-start">
             <div className="dropdown">
               <button
@@ -30,7 +30,7 @@ function Navbar() {
               </button>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white text-black rounded-box w-52 z-10"
+                className="menu  menu-sm dropdown-content mt-3 p-2 shadow bg-white text-xl text-black rounded-box w-52 z-10"
               >
                 <li>
                   <Link href="/">Books</Link>
@@ -68,12 +68,12 @@ function Navbar() {
                 className="btn btn-ghost btn-circle avatar"
                 aria-label="User Menu"
               >
-                <div className="w-10 rounded-full">
+                {/* <div className="w-10 rounded-full">
                   <img
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                     alt="User Avatar"
                   />
-                </div>
+                </div> */}
               </button>
               <ul
                 tabIndex={0}
