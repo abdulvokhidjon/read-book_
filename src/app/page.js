@@ -14,6 +14,7 @@ export default function Books() {
           "https://json-api.uz/api/project/top-bestseller-books/books"
         );
 
+        // Check if response status is OK (200-299)
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }
@@ -21,7 +22,8 @@ export default function Books() {
         const data = await res.json();
         setBooks(data);
       } catch (err) {
-        console.error("Error fetching books:", err);
+        console.error("Error fetching books:", err.message);
+        alert("Failed to fetch books. Check the console for details.");
       }
     };
 
@@ -32,17 +34,23 @@ export default function Books() {
     const url = `https://json-api.uz/api/project/top-bestseller-books/books/${id}`;
 
     try {
-      await fetch(url, {
+      const res = await fetch(url, {
         method: "DELETE",
       });
+
+      // Check if response status is OK (200-299)
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+
       setBooks((prevBooks) => ({
         ...prevBooks,
         data: prevBooks.data.filter((book) => book.id !== id),
       }));
       alert("Book deleted successfully!");
     } catch (error) {
-      console.error("Error deleting the book:", error);
-      alert("Failed to delete the book.");
+      console.error("Error deleting the book:", error.message);
+      alert("Failed to delete the book. Check the console for details.");
     }
   };
 
@@ -54,13 +62,19 @@ export default function Books() {
     const url = `https://json-api.uz/api/project/top-bestseller-books/books/${editingBook.id}`;
 
     try {
-      await fetch(url, {
+      const res = await fetch(url, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(editingBook),
       });
+
+      // Check if response status is OK (200-299)
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+
       setBooks((prevBooks) => ({
         ...prevBooks,
         data: prevBooks.data.map((book) =>
@@ -70,8 +84,8 @@ export default function Books() {
       setEditingBook(null);
       alert("Book updated successfully!");
     } catch (error) {
-      console.error("Error updating the book:", error);
-      alert("Failed to update the book.");
+      console.error("Error updating the book:", error.message);
+      alert("Failed to update the book. Check the console for details.");
     }
   };
 
@@ -140,7 +154,7 @@ export default function Books() {
                     {book.title}
                   </h2>
                   <p className="text-gray-600">{book.author}</p>
-                  <p className="text-sm text-gray-500 mt-1">{book.price} sum</p>
+                  {/* <p className="text-sm text-gray-500 mt-1">{book.price} sum</p> */}
                   <div className="mt-2">
                     <button className="btn btn-primary w-full">
                       Learn More

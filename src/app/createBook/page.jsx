@@ -157,10 +157,10 @@ function CreateBook() {
                     <span className="font-bold">Mualif: </span>
                     {formData.auth}
                   </p>
-                  <p className="py-4">
+                  {/* <p className="py-4">
                     <span className="font-bold">Narxi:</span> {formData.price}{" "}
                     sum
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <div className="modal-action">
