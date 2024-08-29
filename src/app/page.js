@@ -1,63 +1,54 @@
-import axios from "axios";
-import Navbar from "@/components/navbar/page";
-import Link from "next/link";
-import { TbHandClick } from "react-icons/tb";
+"use client";
+import { useEffect, useState } from "react"; // Bir marta import qilish kifoya
 
-const getData = async () => {
-  const response = await axios.get("https://dummyjson.com/products");
-  return response.data;
-};
+export default function Books() {
+  // Komponent nomi "Books" qilib o'zgartirilgan
+  const [books, setBooks] = useState([]);
 
-async function Home() {
-  const data = await getData();
+  // Kitoblarni olish uchun fetch qilish
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const res = await fetch("http://localhost:4000/books");
+        const data = await res.json();
+        setBooks(data);
+      } catch (err) {
+        console.error("Ma'lumotlarni olishda xatolik yuz berdi:", err);
+      }
+    };
+
+    fetchBooks();
+  }, []); // Bu yerda [] bilan useEffect ichida fetchBooks faqat bir marta ishlaydi
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
-      <header className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 sticky top-0 z-30 shadow-lg">
-        <Navbar />
-      </header>
-      <main className="container mx-auto py-12">
-        <h1 className="text-5xl font-extrabold text-center mb-16">
-          Discover Our Products
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {data.products.map((prod) => (
-            <Link
-              key={prod.id}
-              href={`singlePage/${prod.id}`}
-              className="transform transition-transform hover:scale-105"
-            >
-              <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-none transition-shadow duration-300">
-                <figure className="h-56 overflow-hidden">
-                  <img
-                    src={prod.thumbnail}
-                    alt={prod.title}
-                    className="w-full h-full object-cover transform transition-transform hover:scale-110"
-                  />
-                </figure>
-                <div className="p-6 flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-2xl font-bold mb-4">{prod.title}</h2>
-                    <p className="text-gray-400">
-                      <span className="font-semibold">Brand:</span>{" "}
-                      {prod.brand || "No brand available"}
-                    </p>
-                    <p className="mt-4 text-gray-300 line-clamp-3">
-                      {prod.description}
-                    </p>
-                  </div>
-                  <div className="mt-6 flex items-center justify-between text-pink-400">
-                    <span className="font-semibold">Learn More</span>
-                    <TbHandClick className="w-6 h-6" />
-                  </div>
-                </div>
+    <div className="container">
+      <div className="mt-20 container flex flex-wrap justify-between items-center">
+        {books.map((book) => (
+          <div
+            key={book.id}
+            className="h-[300px] mb-5 card card-compact border-2 bg-base-100 w-[22%] shadow-xl"
+          >
+            <figure className=" mt-2 h-[150px] overflow-hidden">
+              <img
+                className="h-full w-[full] object-cover "
+                src={book.imgURL}
+                alt={book.title}
+              />
+            </figure>
+            <div className="card-body flex flex-col justify-between h-[180px]">
+              <h2 className="card-title truncate">{book.title}</h2>
+              <span className="text-[18px] font-semibold text-gray-400">
+                {book.auth}
+              </span>
+              <span>{book.price} sum</span>
+              <p className="text-sm">{book.author}</p>
+              <div className="w-full card-actions justify-end">
+                <button className="w-full btn btn-primary">Learn More</button>
               </div>
-            </Link>
-          ))}
-        </div>
-      </main>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-
-export default Home;
