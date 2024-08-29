@@ -8,7 +8,7 @@ function CreateBook() {
   const [formData, setFormData] = useState({
     title: "",
     auth: "",
-    imgURL: "",
+    image: "",
     kategoriya: "",
     description: "",
     price: "",
@@ -35,7 +35,7 @@ function CreateBook() {
     }
 
     // Agar hamma narsa to'g'ri bo'lsa, fetch orqali ma'lumot yuboriladi
-    fetch("http://localhost:4000/books", {
+    fetch("https://json-api.uz/api/project/top-bestseller-books/books", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -45,7 +45,7 @@ function CreateBook() {
       setFormData({
         title: "",
         auth: "",
-        imgURL: "",
+        image: "",
         kategoriya: "",
         description: "",
         price: "",
@@ -86,12 +86,12 @@ function CreateBook() {
           error={errors.auth}
         />
         <FormInput
-          name="imgURL"
+          name="image"
           label="Book Img URL:"
           placeholder="Img URL..."
-          value={formData.imgURL}
+          value={formData.image}
           onChange={handleInputChange}
-          error={errors.imgURL}
+          error={errors.image}
         />
         <FormInput
           name="kategoriya"
@@ -138,14 +138,14 @@ function CreateBook() {
       {formData.title &&
         formData.auth &&
         formData.description &&
-        formData.imgURL &&
+        formData.image &&
         formData.price &&
         formData.kategoriya && (
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box ">
               <div className="flex items-center gap-5">
                 <div>
-                  <img width={180} src={formData.imgURL} alt="" />
+                  <img width={180} src={formData.image} alt="" />
                 </div>
                 <div>
                   <h3 className=" text-lg">
@@ -165,7 +165,6 @@ function CreateBook() {
               </div>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
                   <button className="btn mr-5">Close</button>
                   <button onClick={handleSubmit} className="btn btn-primary">
                     Create

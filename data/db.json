@@ -1,76 +1,144 @@
 {
   "books": [
     {
-      "id": "1",
-      "title": "Yulduzli Tunlar",
-      "auth": "Pirimqul Qodirov",
-      "imgURL": "https://kitobxon.com/img_knigi/1453.jpg"
+      "id": 1,
+      "title": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "image": "https://image.tmdb.org/t/p/original/d5rjKoyyXk6qattn0x3T31ImgCq.jpg",
+      "description": "A poignant tale of a young girl raised in the marshlands of North Carolina, navigating a world filled with mystery, love, and heartache."
     },
     {
-      "id": "6efe",
-      "title": "O'tgan Kunlar ",
-      "auth": "Abdulla Qodriy",
-      "imgURL": "https://upload.wikimedia.org/wikipedia/uz/8/81/O%CA%BBtgan_kunlar.jpg",
-      "kategoriya": "romantik"
+      "id": 2,
+      "title": "The Midnight Library",
+      "author": "Matt Haig",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkOWLYC6vShUY4LBinehzT3y15zbiT3qfC1Q&s",
+      "description": "A mesmerizing novel about a library beyond life where each book provides a chance to live another life you could have lived, and to see how things would be different."
     },
     {
-      "id": "815e",
-      "title": "kecha va kunduz",
-      "auth": "Cho'lpon",
-      "imgURL": "https://lh4.googleusercontent.com/proxy/tS562a2gOdp-z6w4Nz3gvFfbMmgkpi5ikS1wT5Ojo7FAM4YkDNT_PZIJMSlOj0rTRFHPw_IhNGm4wVzAT8Xr_pzxR0smo3CtApLeW_rSB1JNiOROvc1eNihMBkYgZPCbU6-WOr7iuCGhoIcu4dzzwByM4w3e2eXd4uonNrLk",
-      "kategoriya": "romantik"
+      "id": 3,
+      "title": "The Vanishing Half",
+      "author": "Brit Bennett",
+      "image": "https://static1.squarespace.com/static/6238ab351a866311a82c8104/6238ab8d0003dd0c089405e6/62424023e806a630915a5633/1648823944353/The+Vanishing+Half.jpg?format=1500w",
+      "description": "A multi-generational family saga that explores the lasting influence of the past as it shapes a person's decisions, desires, and expectations."
     },
     {
-      "id": "e8ae",
-      "title": "Mukoshafatul Qulub",
-      "auth": "G'azzolliy",
-      "imgURL": "https://kitobxon.com/img_knigi/3102.jpg",
-      "kategoriya": "Diniy"
+      "id": 4,
+      "title": "The Four Winds",
+      "author": "Kristin Hannah",
+      "image": "https://ik.imagekit.io/panmac/tr:di-placeholder_portrait_aMjPtD9YZ.jpg,tr:w-350,f-jpg,pr-true/edition/9781529054583.jpg",
+      "description": "An epic novel of love and heroism and hope, set against the backdrop of one of America’s most defining eras—the Great Depression."
     },
     {
-      "id": "6756",
-      "title": "Sariq Devni minib ",
-      "auth": "Xudoyberdi.T",
-      "imgURL": "https://assets.asaxiy.uz/product/items/desktop/5e15bc06f3263.jpg.webp",
-      "kategoriya": "Komediya",
-      "description": "O’zbekiston xalq yozuvchisi, bolalarning sevimli adibi Xudoyberdi To’xtaboyevning asalari ‎nafaqat respublikamizda, balki chetellarda ham ma’lum va mashhurdir. Qo’lingizdagi “Sariq ‎devni minib” sarguzasht romani bolalar hayotidan olib yozilgan bo’lib, ularning sevimli ‎kitoblaridandir. Bu asarda orzu-havasga eltadigan chinakam yo’l halol mehnat, yaxshi xulq-odob ‎va qunt bilan o’qishda ekanligi ta’kidlanadi.‎",
-      "price": "25.000"
+      "id": 5,
+      "title": "A Promised Land",
+      "author": "Barack Obama",
+      "image": "https://assets.asaxiy.uz/product/items/desktop/c5f5c23be1b71adb51ea9dc8e9d444a8202205102244347792698jm1OOMy6.jpg.webp",
+      "description": "A riveting, deeply personal account of history in the making—from the president who inspired us to believe in the power of democracy."
     },
     {
-      "id": "e199",
-      "title": "Izlash",
-      "auth": "Mehmet",
-      "imgURL": "https://assets.asaxiy.uz/product/items/desktop/812b4ba287f5ee0bc9d43bbf5bbe87fb2022061211363491130PdYM0j11lx.jpg.webp",
-      "kategoriya": "Diniy",
-      "description": "Hayotining bahorida so‘ligan navnihol...  Maishiy zo‘ravonlik, qotillik, ko‘cha hayoti, giyohvandlik, yetimlik, afsus-nadomat va ruhiy azoblarni boshdan kechirgan yoshgina yigitcha.  Bu yoshida buncha yukni ko‘tarish unga og‘irlik qildi.",
-      "price": "65.000"
+      "id": 6,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYTzonXYyV9QRWSFZsYMU6ca_jV8A4YGokYQ&s",
+      "description": "An easy and proven way to build good habits and break bad ones."
     },
     {
-      "id": "45c9",
-      "title": "Men ",
-      "auth": "Fotih Duman",
-      "imgURL": "https://assets.asaxiy.uz/product/items/desktop/20d2921a6b4613b3b774cad8154c6db22024011721361420614dTIWnrLuSU.jpg.webp",
-      "kategoriya": "Diniy",
-      "description": "Ushbu kitob nafsiga qarshi kurashib valiylik darajasiga yetgan Aziz Mahmud Xudoiy hazratlari  haqida yozilgan.  Inson nafsni yengdim deb o‘ylab adashadi, u ma’lum muddat jim turgani bilan, insonni bir zumga ham tark etmaydi, uni hamisha ta’qib qiladi. Zero, nafs o‘lmaydi, o‘zini uxlaganga soladi..  Nafs va kibrni yengish, ilohiy ishqqa yetishish hikoya qilingan ushbu qissani o‘qib, ichingizdagi eng katta dushmaningizga qarshi kurashda bir on ham to‘xtamaslik kerakligini anglaysiz",
-      "price": "50.000"
+      "id": 7,
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "image": "https://m.media-amazon.com/images/I/61R+Cpm+HxL._AC_UF1000,1000_QL80_.jpg",
+      "description": "A shocking psychological thriller of a woman's act of violence against her husband—and of the therapist obsessed with uncovering her motive."
     },
     {
-      "id": "4923",
-      "title": "Aso",
-      "auth": "Fotih Duman",
-      "imgURL": "https://olcha.uz/image/700x700/products/supplier/stores/1/2024-02-10/QHsDbN45FVvo6r2bQg1KsMciGDroiB5v2Eq5krG0T3xS8H7EMkl4uZg4OhFx.jpg",
-      "kategoriya": "diniy",
-      "description": "nbio[eb[oinvq4rbtrbtrbrwbn",
-      "price": "65.000"
+      "id": 8,
+      "title": "The Invisible Life of Addie LaRue",
+      "author": "V.E. Schwab",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-WhwQM5To_FiADkZJTKkgwvABZuqkNi0eiw&s",
+      "description": "A life no one will remember. A story you will never forget."
     },
     {
-      "id": "cfc8",
-      "title": "fbvrwbrtb",
-      "auth": "rbrtnbrtbrt",
-      "imgURL": "brqenrtnrt",
-      "kategoriya": "rnbrtntrn",
-      "description": "nbrtntrnr",
-      "price": "rnrtntrn"
+      "id": 9,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "image": "https://m.media-amazon.com/images/I/61HAE8zahLL._AC_UF1000,1000_QL80_.jpg",
+      "description": "A global phenomenon, this story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure, is full of wisdom and wonder."
+    },
+    {
+      "id": 10,
+      "title": "Educated",
+      "author": "Tara Westover",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcuLipdReOGjslChgAkOoTA__dHAuugazLwA&s",
+      "description": "A memoir about a young girl who, kept out of school, leaves her survivalist family and goes on to earn a PhD from Cambridge University."
+    },
+    {
+      "id": 11,
+      "title": "Becoming",
+      "author": "Michelle Obama",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKCgwrWNIK486pl6vjL0wfspzv11madF3fg&s",
+      "description": "An intimate, powerful, and inspiring memoir by the former First Lady of the United States."
+    },
+    {
+      "id": 12,
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "image": "https://img1.od-cdn.com/ImageType-400/0211-1/1FD/B2F/46/%7B1FDB2F46-59B7-494E-B31B-DE33FF41F6D8%7DImg400.jpg",
+      "description": "A gripping, heart-wrenching novel about a young girl's survival during World War II in Nazi Germany."
+    },
+    {
+      "id": 13,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR22aCWObINXZFuqN8_19B8DB4pqzAfS86SA&s",
+      "description": "A stunning blend of adventure and mysticism, environmentalism and politics, Dune won the first Nebula Award, shared the Hugo Award, and formed the basis of what is undoubtedly the grandest epic in science fiction."
+    },
+    {
+      "id": 14,
+      "title": "The Seven Husbands of Evelyn Hugo",
+      "author": "Taylor Jenkins Reid",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpFpPixlWMbDgcAhGklgyDAS8oo_pCyJ8SdA&s",
+      "description": "A novel about an aging and reclusive Hollywood movie icon as she reflects on her relentless rise to the top and the risks she took, the loves she lost, and the long-held secrets the public could never imagine."
+    },
+    {
+      "id": 15,
+      "title": "Little Fires Everywhere",
+      "author": "Celeste Ng",
+      "image": "https://img1.od-cdn.com/ImageType-400/1523-1/%7B894D27D5-6E9E-477B-AF8B-04F529F8B345%7DIMG400.JPG",
+      "description": "A riveting novel that traces the intertwined fates of the picture-perfect Richardson family and the enigmatic mother and daughter who upend their lives."
+    },
+    {
+      "id": 16,
+      "title": "Circe",
+      "author": "Madeline Miller",
+      "image": "https://m.media-amazon.com/images/I/51Mqas4UyXL._SL500_.jpg",
+      "description": "A bold and subversive retelling of the goddess's story, Circe is a triumph of storytelling, an intoxicating epic of family rivalry, palace intrigue, love, and loss."
+    },
+    {
+      "id": 17,
+      "title": "The Song of Achilles",
+      "author": "Madeline Miller",
+      "image": "https://img1.od-cdn.com/ImageType-400/0293-1/FE3/EEE/7F/%7BFE3EEE7F-2DDD-4E12-998A-38C5A43B948D%7DImg400.jpg",
+      "description": "A thrilling and unique retelling of the legend of Achilles, this novel brings a tale of gods, kings, immortal fame, and the human heart."
+    },
+    {
+      "id": 18,
+      "title": "Normal People",
+      "author": "Sally Rooney",
+      "image": "https://emka.si/cdn/shop/products/9780571334650.jpg?v=1681801427",
+      "description": "A stunning novel about the transformative power of relationships."
+    },
+    {
+      "id": 19,
+      "title": "1984",
+      "author": "George Orwell",
+      "image": "https://i.etsystatic.com/17937725/r/il/f31bbc/5980717634/il_340x270.5980717634_qs4w.jpg",
+      "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
+    },
+    {
+      "id": 20,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnDjrzA3MQDnF7s5lIiV930E-AUlyez_IiyQ&s",
+      "description": "The novel's protagonist Holden Caulfield has become an icon for teenage rebellion."
     }
   ]
 }
